@@ -6,6 +6,7 @@ set relativenumber
 
 call plug#begin()
 
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'folke/trouble.nvim'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -69,7 +70,7 @@ let g:code_action_menu_window_border = 'single'
 " folke/trouble.nvim
 " ------------------------------------
 "
-" lua require("trouble").setup()
+lua require("trouble").setup()
 
 " ------------------------------------
 " Neovim LSP
