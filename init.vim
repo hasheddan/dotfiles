@@ -146,7 +146,7 @@ require('rust-tools').setup(opts)
 EOF
 
 " Configure Rust Environment.
-autocmd BufWritePost *.rs lua vim.lsp.buf.formatting_sync(nil, 200)
+autocmd BufWritePost *.rs lua vim.lsp.buf.format({ async = false })
 
 
 " Configure TypeScript LSP.
