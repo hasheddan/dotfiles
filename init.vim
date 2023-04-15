@@ -26,8 +26,21 @@ Plug 'weilbith/nvim-code-action-menu'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
 
 call plug#end()
+
+" ------------------------------------
+" nvim-telescope/telescope
+" ------------------------------------
+"
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " ------------------------------------
 " airblade/vim-gitgutter
@@ -41,9 +54,17 @@ let g:gitgutter_highlight_lines = 1
 " ------------------------------------
 "
 
-" TODO(hasheddan): tokyonight colors make line numbers very hard to read in
-" low light.
-" colorscheme tokyonight
+lua <<EOF
+require("tokyonight").setup({
+  styles = {
+    LineNr = {
+      fg = "#3b4261"
+    }
+  }
+})
+EOF
+
+colorscheme tokyonight
 
 " NOTE(hasheddan): the following config is heavily inspired by
 " https://www.integralist.co.uk/posts/neovim/
@@ -122,6 +143,15 @@ local opts = {
     },
 }
 require('rust-tools').setup(opts)
+EOF
+
+" Configure Rust Environment.
+autocmd BufWritePost *.rs lua vim.lsp.buf.formatting_sync(nil, 200)
+
+
+" Configure TypeScript LSP.
+lua <<EOF
+require('lspconfig').tsserver.setup{}
 EOF
 
 " Configure Golang LSP.
@@ -257,7 +287,7 @@ EOF
 "
 lua <<EOF
 require('nvim-treesitter.configs').setup {
-  ensure_installed = { "bash", "c", "cmake", "css", "dockerfile", "go", "gomod", "gowork", "hcl", "help", "html", "http", "javascript", "json", "lua", "make", "markdown", "python", "regex", "ruby", "rust", "toml", "vim", "yaml", "zig" },
+  ensure_installed = { "bash", "c", "cpp", "cmake", "css", "dockerfile", "go", "gomod", "gowork", "hcl", "help", "html", "http", "javascript", "json", "lua", "make", "markdown", "python", "regex", "ruby", "rust", "toml", "vim", "yaml", "zig" },
   highlight = {
     enable = true,
   },
