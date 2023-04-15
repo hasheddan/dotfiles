@@ -146,7 +146,7 @@ require('rust-tools').setup(opts)
 EOF
 
 " Configure Rust Environment.
-autocmd BufWritePost *.rs lua vim.lsp.buf.formatting_sync(nil, 200)
+autocmd BufWritePost *.rs lua vim.lsp.buf.format({ async = false })
 
 
 " Configure TypeScript LSP.
@@ -287,7 +287,7 @@ EOF
 "
 lua <<EOF
 require('nvim-treesitter.configs').setup {
-  ensure_installed = { "bash", "c", "cpp", "cmake", "css", "dockerfile", "go", "gomod", "gowork", "hcl", "help", "html", "http", "javascript", "json", "lua", "make", "markdown", "python", "regex", "ruby", "rust", "toml", "vim", "yaml", "zig" },
+  ensure_installed = { "bash", "c", "cpp", "cmake", "css", "dockerfile", "go", "gomod", "gowork", "hcl", "html", "http", "javascript", "json", "lua", "make", "markdown", "python", "regex", "ruby", "rust", "toml", "vim", "vimdoc", "yaml", "zig" },
   highlight = {
     enable = true,
   },
