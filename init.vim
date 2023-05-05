@@ -154,6 +154,20 @@ lua <<EOF
 require('lspconfig').tsserver.setup{}
 EOF
 
+" Configure C LSP.
+lua <<EOF
+require('lspconfig').ccls.setup{
+  init_options = {
+    cache = {
+      directory = ".ccls-cache";
+    };
+  }
+}
+EOF
+
+" Configure C Environment.
+autocmd BufWritePost *.c lua vim.lsp.buf.format({ async = false })
+
 " Configure Golang LSP.
 "
 " https://github.com/golang/tools/blob/master/gopls/doc/settings.md
