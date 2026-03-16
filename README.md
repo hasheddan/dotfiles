@@ -48,6 +48,12 @@ sudo snap install rustup --classic
 sudo snap install go --classic
 ```
 
+### `dlv`
+
+```
+go install github.com/go-delve/delve/cmd/dlv@latest
+```
+
 ### `ripgrep`
 
 ```
@@ -64,4 +70,16 @@ cargo install --locked tree-sitter-cli
 
 ```
 sudo snap install flutter --classic
+```
+
+### `kubectl`
+
+```
+snap install kubectl --classic
+```
+
+### `imagemagick`
+
+```
+sudo apt install imagemagick
 ```
