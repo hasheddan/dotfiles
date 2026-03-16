@@ -18,6 +18,18 @@ cp -r ./.config/. ~/.config/.
 
 The following tools must be installed in the environment.
 
+### `curl`
+
+```
+sudo apt install curl
+```
+
+### `python3-venv`
+
+```
+sudo apt install python3-venv
+```
+
 ### `neovim`
 
 ```
@@ -34,6 +46,12 @@ sudo apt install build-essential
 
 ```
 sudo apt install clang
+```
+
+### `clang-format`
+
+```
+sudo apt install clang-format
 ```
 
 ### `rust`
@@ -64,6 +82,12 @@ sudo apt install ripgrep
 
 ```
 cargo install --locked tree-sitter-cli
+```
+
+### `stylua`
+
+```
+cargo install stylua
 ```
 
 ### `flutter`
