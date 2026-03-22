@@ -22,6 +22,7 @@ return {
 			cpp = { "clang-format" },
 			lua = { "stylua" },
 			go = { "gofmt" },
+			dart = { "dart_format" },
 		},
 		formatters = {
 			["clang-format"] = {

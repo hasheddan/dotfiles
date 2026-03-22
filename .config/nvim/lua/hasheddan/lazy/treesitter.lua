@@ -17,6 +17,7 @@ return {
 				"python",
 				"typescript",
 				"markdown",
+				"dart",
 			},
 			sync_install = false,
 			highlight = { enable = true },
