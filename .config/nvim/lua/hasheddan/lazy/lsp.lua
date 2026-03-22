@@ -23,6 +23,13 @@ return {
 			cmp_lsp.default_capabilities()
 		)
 
+		vim.lsp.config.dartls = {
+			cmd = { "dart", "language-server", "--protocol=lsp" },
+			filetypes = { "dart" },
+			capabilities = capabilities,
+		}
+		vim.lsp.enable("dartls")
+
 		require("fidget").setup({})
 		require("mason").setup()
 		require("mason-lspconfig").setup({
