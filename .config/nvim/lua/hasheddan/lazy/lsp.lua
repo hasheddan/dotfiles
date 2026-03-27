@@ -39,6 +39,7 @@ return {
 				"gopls",
 				"clangd",
 				"ruff",
+				"vtsls",
 			},
 			handlers = {
 				function(server_name) -- default handler (optional)

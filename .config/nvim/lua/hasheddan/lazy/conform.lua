@@ -23,6 +23,9 @@ return {
 			lua = { "stylua" },
 			go = { "gofmt" },
 			dart = { "dart_format" },
+			javascript = { "prettier" },
+			typescript = { "prettier" },
+			typescriptreact = { "prettier" },
 		},
 		formatters = {
 			["clang-format"] = {
