@@ -4,6 +4,7 @@ require("hasheddan.lazy_init")
 local augroup = vim.api.nvim_create_augroup
 local hasheddan_group = augroup("hasheddan", {})
 
+vim.opt.textwidth = 80
 vim.opt.number = true
 vim.opt.relativenumber = true
 
