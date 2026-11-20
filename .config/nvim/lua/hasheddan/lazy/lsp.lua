@@ -41,6 +41,8 @@ return {
 				"ruff",
 				"vtsls",
 			},
+			-- defer kotlin_lsp management to kotlin.nvim
+			automatic_enable = { exclude = { "kotlin_lsp" } },
 			handlers = {
 				function(server_name) -- default handler (optional)
 					require("lspconfig")[server_name].setup({
