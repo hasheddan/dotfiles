@@ -5,6 +5,16 @@ return {
 		"nvim-lua/plenary.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 	},
+	opts = {
+		pickers = {
+			buffers = {
+				mappings = {
+					i = { ["<C-d>"] = "delete_buffer" },
+					n = { ["dd"] = "delete_buffer", ["<C-d>"] = "delete_buffer" },
+				},
+			},
+		},
+	},
 	keys = {
 		{
 			"<leader>ff",
@@ -29,6 +39,14 @@ return {
 			end,
 			mode = "n",
 			desc = "Telescope Grep String",
+		},
+		{
+			"<leader><leader>",
+			function()
+				require("telescope.builtin").buffers()
+			end,
+			mode = "n",
+			desc = "Telescope Buffers",
 		},
 		{
 			"<leader>ss",
